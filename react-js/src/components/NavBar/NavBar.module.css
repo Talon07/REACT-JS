@@ -1,0 +1,33 @@
+.nav {
+  background-color: #333;
+  width: 100%;
+  margin: 0;
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+}
+.logo {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-family: "Times New Roman", Times, serif;
+}
+.logo1 {
+  width: 60px;
+  height: 60px;
+  margin-left: 10%;
+}
+.buttons {
+  width: 30%;
+  display: flex;
+  justify-content: space-between;
+}
+.buttons button {
+  background-color: #333;
+  font-size: 18px;
+  transition: border-color 0.25s;
+}
+
+.buttons button:hover {
+  border-color: rgb(210, 107, 70);
+}
