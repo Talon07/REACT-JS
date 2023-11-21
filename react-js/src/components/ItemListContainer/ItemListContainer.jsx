@@ -1,20 +1,37 @@
-import React from "react";
-import style from "./ItemListContainer.module.css";
+import React, { useEffect, useState } from "react";
+import {
+  getProducts,
+  getProductById,
+  getProductsByCategory,
+} from "../../../../asyncMock";
+import ItemList from "../ItemList/ItemList";
+import "./ItemListContainer.module.css";
 
-function ItemListContainer(props) {
+import { useParams } from "react-router-dom";
+
+const ItemListContainer = ({ greeting }) => {
+  const [products, setProducts] = useState([]);
+
+  const { categoryId } = useParams();
+
+  useEffect(() => {
+    const asyncFunc = categoryId ? getProductsByCategory : getProducts;
+
+    asyncFunc(categoryId)
+      .then((response) => {
+        setProducts(response);
+      })
+      .catch((error) => {
+        console.error(error);
+      });
+  }, [categoryId]);
+
   return (
-    <div className={style.container}>
-      <div className={style.box}>
-        <h3>{props.nombre}</h3>
-      </div>
-      <div className={style.box}>
-        <h3>{props.nombre}</h3>
-      </div>
-      <div className={style.box}>
-        <h3>{props.nombre}</h3>
-      </div>
+    <div>
+      <h1>{greeting}</h1>
+      <ItemList products={products} />
     </div>
   );
-}
+};
 
 export default ItemListContainer;

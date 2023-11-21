@@ -1,0 +1,9 @@
+.CardDetail {
+  background-color: #333;
+  border-radius: 10px;
+  height: auto;
+  width: 400px;
+  margin: 3%;
+  padding: 3%;
+  text-align: center;
+}

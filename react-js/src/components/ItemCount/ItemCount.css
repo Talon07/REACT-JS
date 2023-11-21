@@ -1,0 +1,19 @@
+.Counter {
+  align-items: center;
+  text-align: center;
+}
+.Controls {
+  display: flex;
+  justify-content: center;
+}
+.Controls button {
+  margin: 0 5% 0 5%;
+  width: 70px;
+}
+.Controls h4 {
+  font-size: 18px;
+}
+.Agregar {
+  margin: 3%;
+  font-size: 18px;
+}
